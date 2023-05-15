@@ -1,29 +1,33 @@
-import { useState } from 'react'
+import React from "react";
+import { Input } from "../../components/Input";
+import { Text } from "../../components/Text";
+import { Image } from "../../components/Image";
+import { Button, Info } from "../../components/Button";
 
-import './App.css'
-
-function Login() {
-  const [count, setCount] = useState(0)
+const Login = (props) => {
+  const {mudaSecao} = props;
+ 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    };
 
   return (
-    <>
-      <div>
-        
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <section>
+          <Text>Welcome Back</Text>
+
+          <Image src="image1.svg" alt="" />
+
+          <form onSubmit={handleSubmit}>
+            <Input type="email" placeholder="Enter you Email addreass" name="email"/>
+            <Input  type='password' placeholder="Confirm Password" name="password"/>
+          
+            <Button type="submit" title="Sing in" />
+          </form>
+
+          <Text>Dont have an account? <Info  onClick= {() => mudaSecao('addTodo')} 
+            title="Sing Up" /> </Text>
+   </section>
+  );
 }
 
-export default Login
+export default Login;
