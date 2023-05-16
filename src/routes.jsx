@@ -1,8 +1,8 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Login from './pages/login';
+import Login from "./pages/login";
 import AddTodo from "./pages/addTodo";
-import TodoTasks from './pages/todoTasks';
+import Dashboard from "./pages/dashboard";
 
 const router = createBrowserRouter([
   {
@@ -17,9 +17,9 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/todotasks",
-    element: <TodoTasks />,
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 
-export {router};
+export { router };

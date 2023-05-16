@@ -1,27 +1,17 @@
 import React from "react";
-import AddTodo from "../addTodo";
+import { TodoList } from "../../components/TodoList";
+import { Image } from "../../components/Image";
 
 const Dashboard = (props) => {
-    const {tasks} = props;
-    function handleTaskCompletion(index) {
-        const newTasks = [...tasks];
-        newTasks[index].completed = !newTasks[index].completed;
-      }
+  const { mudaSecao } = props;
 
-      return (
-        <section>
-            <ul>
-                {tasks.map((task, index) => (
-                <AddTodo
-                    key={index}
-                    name={task.name}
-                    completed={task.completed}
-                    onCompletion={() => handleTaskCompletion(index)}
-                />
-                ))}
-            </ul>
-        </section>
-      );
-}
+  return (
+    <section>
+      <Image src="image3.svg" alt="" />
+
+      <TodoList />
+    </section>
+  );
+};
 
 export default Dashboard;
