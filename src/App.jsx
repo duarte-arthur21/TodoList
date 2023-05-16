@@ -1,14 +1,11 @@
-import React from 'react';
-import './App.css'
-import Template from './templates';
+import React from "react";
+import "./App.css";
+import Template from "./templates";
+import { router } from "./routes";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
-
-  return (
-    <>
-      <Template />
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
