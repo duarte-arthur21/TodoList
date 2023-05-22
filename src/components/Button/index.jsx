@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Button = (props) => {
   return <MyButton {...props}>{props.title}</MyButton>;
@@ -8,12 +9,12 @@ const Button = (props) => {
 export { Button };
 
 const MyButton = styled.button`
-  font-family: "Poppins";
   font-size: 17px;
   line-height: 35px;
   width: 220px;
   justify-content: center;
   text-align: center;
+  border-radius: 0%;
 
   ${({ variant }) => {
     switch (variant) {

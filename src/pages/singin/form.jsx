@@ -14,7 +14,7 @@ const Form = () => {
 
     const data = {
       email: event.target.email.value,
-      password: event.password.value,
+      password: event.target.password.value,
     };
 
     updateUser(data);
@@ -29,6 +29,7 @@ const Form = () => {
         name="email"
         required
       />
+
       <Input
         placeholder="Confirm Password"
         type="password"
