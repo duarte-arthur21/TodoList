@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Login from "../pages/login";
+import Singin from "../pages/singin";
 import AddTodo from "../pages/addTodo";
 import Dashboard from "../pages/dashboard";
 
@@ -8,7 +8,7 @@ function Template() {
   const [secaoAtual, setSecaoAtual] = useState("login");
 
   const render = () => {
-    if (secaoAtual === "login") return <Login mudaSecao={setSecaoAtual} />;
+    if (secaoAtual === "ingin") return <Singin mudaSecao={setSecaoAtual} />;
 
     if (secaoAtual === "addTodo") return <AddTodo mudaSecao={setSecaoAtual} />;
 

@@ -1,14 +1,13 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Login from "./pages/login";
+import Singin from "./pages/singin";
 import AddTodo from "./pages/addTodo";
 import Dashboard from "./pages/dashboard";
-import Template from "./templates";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Singin />,
     errorElement: <div>Rota inexistente</div>,
   },
 

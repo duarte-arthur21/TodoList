@@ -1,22 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 import { Head } from "./head";
 import { Form } from "./form";
-import styled from "styled-components";
+import { Footer } from "./footer";
 
-const Dashboard = () => {
+const Singin = () => {
   return (
     <Wrapper>
       <Head />
       <Form />
+      <Footer />
     </Wrapper>
   );
 };
 
-export default Dashboard;
+export default Singin;
 
 const Wrapper = styled.div`
   display: flex;
-  position: relative;
   flex-direction: column;
   width: ${window.innerWidth}px;
   height: ${window.innerHeight}px;
