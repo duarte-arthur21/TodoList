@@ -1,13 +1,15 @@
 import React from "react";
 import { Head } from "./head";
-import { Form } from "./form";
+import { List } from "./list";
 import styled from "styled-components";
 
 const Dashboard = () => {
   return (
     <Wrapper>
       <Head />
-      <Form />
+      <div className="">
+        <List />
+      </div>
     </Wrapper>
   );
 };

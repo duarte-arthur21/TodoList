@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Text } from "../../components/Text";
+import { Text } from "../../../components/Text";
+import { Item } from "./Item";
 import styled from "styled-components";
 
-const Form = () => {
+const List = () => {
   const [tasks, setTasks] = useState([
     { name: "Tarefa 1", completed: false },
     { name: "Tarefa 2", completed: false },
@@ -21,37 +22,31 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <Text style={{ textAling: "left" }}>Todo Tasks.</Text>
-      <TodoList>
+
+      <Heard>
         <Label>Dairy Tasks</Label>
+      </Heard>
+
+      <Items>
         {tasks.map((task, index) => (
-          <li
+          <Item
             key={index}
-            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+            style={{
+              textDecoration: task.completed ? "line-through" : "none",
+            }}
             onClick={() => handleToggleCompleted(index)}
           >
             {task.name}
-          </li>
+          </Item>
         ))}
-      </TodoList>
-    </div>
+      </Items>
+    </Wrapper>
   );
 };
 
-export { Form };
-
-const TodoList = styled.ul`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 500px;
-  height: 240px;
-  background-color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-`;
+export { List };
 
 const Label = styled.p`
   position: relative;
@@ -61,3 +56,21 @@ const Label = styled.p`
   line-height: 20px;
   color: rgba(0, 0, 0, 0.47);
 `;
+const Wrapper = styled.div`
+  background-color: #fff;
+  border-radius: 30px;
+  width: 339px;
+  height: 240px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-inline: 31px;
+  padding-block: 18px;
+`;
+const Heard = styled.div`
+  font-weight: 500;
+  font-size: 13px;
+  font-family: "popins", sans-serif;
+  color: #000;
+  height: 34px;
+`;
+
+const Items = styled.div``;
