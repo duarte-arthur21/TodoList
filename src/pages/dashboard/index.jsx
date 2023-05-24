@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <Wrapper>
       <Head />
-      <div className="">
+      <div>
         <List />
       </div>
     </Wrapper>

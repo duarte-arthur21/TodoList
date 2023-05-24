@@ -10,8 +10,9 @@ const Head = () => {
 
   return (
     <>
-      <Text>Welcome email do usuário {email} </Text>
+      <Text>Welcome {email}!</Text>
       <Image src="image3.svg" alt="" />
+      <Text style={{ textAling: "left", marginLeft: "-30%" }}>Todo Tasks.</Text>
     </>
   );
 };

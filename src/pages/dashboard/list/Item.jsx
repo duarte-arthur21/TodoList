@@ -10,13 +10,13 @@ const Item = (props) => {
 
   return (
     <Label>
+      <span />
       <ChecboxInput
         type="checkbox"
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
       {props.children}
-      <span></span>
     </Label>
   );
 };
@@ -29,6 +29,7 @@ const Label = styled.label`
   font-size: 13px;
   display: flex;
   gap: 15px;
+  text-align: center;
   cursor: pointer;
 
   input ~ .checkmark {
@@ -40,10 +41,12 @@ const Label = styled.label`
     width: 16px;
     height: 16px;
     border: 2px solid #000;
+    margin: 1%;
   }
 `;
 const ChecboxInput = styled.input`
-  background-color: #ff0000; /* cor desejada */
+  background-color: #fff;
+  display: none;
 
   .checkmark {
     background-color: green;

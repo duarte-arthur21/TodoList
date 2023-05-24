@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Text } from "../../../components/Text";
 import { Item } from "./Item";
+import { PlusButton } from "../../../components/Button";
+import { useTasksStore } from "../../../stores/tasks";
 import styled from "styled-components";
 
 const List = () => {
-  const [tasks, setTasks] = useState([
-    { name: "Tarefa 1", completed: false },
-    { name: "Tarefa 2", completed: false },
-    { name: "Tarefa 3", completed: false },
-  ]);
+  const { tasks } = useTasksStore();
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleToggleCompleted = (taskIndex) => {
-    setTasks((prevTasks) => {
+    setIsChecked((prevTasks) => {
       const updatedTasks = [...prevTasks];
       updatedTasks[taskIndex] = {
         ...updatedTasks[taskIndex],
@@ -23,10 +22,9 @@ const List = () => {
 
   return (
     <Wrapper>
-      <Text style={{ textAling: "left" }}>Todo Tasks.</Text>
-
       <Heard>
-        <Label>Dairy Tasks</Label>
+        <Label>Dairy Tasks.</Label>
+        <PlusButton to="/addTodo" title="+" />
       </Heard>
 
       <Items>
@@ -50,7 +48,7 @@ export { List };
 
 const Label = styled.p`
   position: relative;
-  width: 82px;
+  width: 100px;
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
@@ -66,11 +64,21 @@ const Wrapper = styled.div`
   padding-block: 18px;
 `;
 const Heard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-direction: row;
   font-weight: 500;
-  font-size: 13px;
   font-family: "popins", sans-serif;
   color: #000;
   height: 34px;
 `;
 
-const Items = styled.div``;
+const Items = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: calc(80%);
+  overflow-y: auto;
+  padding-bottom: 20px;
+`;

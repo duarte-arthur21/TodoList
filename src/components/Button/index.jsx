@@ -6,7 +6,11 @@ const Button = (props) => {
   return <MyButton {...props}>{props.title}</MyButton>;
 };
 
-export { Button };
+const PlusButton = (props) => {
+  return <Plus {...props}>{props.title}</Plus>;
+};
+
+export { Button, PlusButton };
 
 const MyButton = styled.button`
   font-size: 17px;
@@ -37,4 +41,21 @@ const MyButton = styled.button`
         `;
     }
   }}
+`;
+
+const Plus = styled(Link)`
+  background-color: #000;
+  width: 31px;
+  height: 31px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;

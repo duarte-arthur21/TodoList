@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Input } from "../../components/Input";
@@ -6,21 +6,28 @@ import { Button } from "../../components/Button";
 import { useTasksStore } from "../../stores/tasks";
 
 const Form = () => {
-  const [newTaskName, setNewTaskName] = useState("");
-  const { tasks, addTasks } = useTasksStore;
+  const { addTasks } = useTasksStore();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const data = {
-      event.target.task1.value,
-      event.target.task2.value,
-      event.target.task3.value,
+    const task1 = {
+      name: event.target.task1.value,
+      completed: false,
     };
 
-    const filteredTasks = data.filter((task) => task !== "")
-    addTasks(filteredTasks);
+    const task2 = {
+      name: event.target.task2.value,
+      completed: false,
+    };
+
+    const task3 = {
+      name: event.target.task3.value,
+      completed: false,
+    };
+
+    addTasks([task1, task2, task3]);
     navigate("/dashboard");
   };
 
