@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Text } from "../../../components/Text";
 import { Item } from "./Item";
 import { PlusButton } from "../../../components/Button";
 import { useTasksStore } from "../../../stores/tasks";
@@ -58,7 +57,7 @@ const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 30px;
   width: 339px;
-  height: 240px;
+  height: 280px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-inline: 31px;
   padding-block: 18px;
@@ -77,7 +76,7 @@ const Heard = styled.div`
 const Items = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
   height: calc(80%);
   overflow-y: auto;
   padding-bottom: 20px;

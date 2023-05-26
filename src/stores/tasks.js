@@ -8,6 +8,16 @@ const useTasksStore = create((set) => ({
       tasks: state.tasks.concat(newTasks),
     }));
   },
+
+  updateTask(taskDescription) {
+    set((state) => ({
+      tasks: state.tasks.map((task) => task.description === 
+      taskDescription ?({
+        description: taskDescription
+      }))
+    }))
+  },
+
 }));
 
 export { useTasksStore };
