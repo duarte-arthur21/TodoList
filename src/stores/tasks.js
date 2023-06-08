@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useState } from "react";
 
 const useTasksStore = create((set) => ({
   tasks: [],
@@ -9,15 +10,13 @@ const useTasksStore = create((set) => ({
     }));
   },
 
-  updateTask(taskDescription) {
+  updateTask: (taskName) => {
     set((state) => ({
-      tasks: state.tasks.map((task) => task.description === 
-      taskDescription ?({
-        description: taskDescription
-      }))
-    }))
+      tasks: state.tasks.map((task) =>
+        task.name === taskName ? { ...task, completed: !task.completed } : task
+      ),
+    }));
   },
-
 }));
 
 export { useTasksStore };

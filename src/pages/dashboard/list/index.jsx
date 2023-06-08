@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Item } from "./Item";
 import { PlusButton } from "../../../components/Button";
 import { useTasksStore } from "../../../stores/tasks";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-const List = () => {
-  const { tasks } = useTasksStore();
-  const [isChecked, setIsChecked] = useState(false);
+const List = (props) => {
+  const tasks = useTasksStore((state) => state.tasks);
 
-  const handleToggleCompleted = (taskIndex) => {
-    setIsChecked((prevTasks) => {
-      const updatedTasks = [...prevTasks];
-      updatedTasks[taskIndex] = {
-        ...updatedTasks[taskIndex],
-        completed: !updatedTasks[taskIndex].completed,
-      };
-      return updatedTasks;
-    });
-  };
+  if (!Array.isArray(tasks)) {
+    return <div>Erro: tasks não é um array.</div>;
+  }
+
+  useEffect(() => {
+    console.log("props.task", props.tasks);
+  }, [props]);
 
   return (
     <Wrapper>
@@ -28,15 +25,7 @@ const List = () => {
 
       <Items>
         {tasks.map((task, index) => (
-          <Item
-            key={index}
-            style={{
-              textDecoration: task.completed ? "line-through" : "none",
-            }}
-            onClick={() => handleToggleCompleted(index)}
-          >
-            {task.name}
-          </Item>
+          <Item key={index} task={task} />
         ))}
       </Items>
     </Wrapper>

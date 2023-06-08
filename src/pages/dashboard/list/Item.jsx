@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useTasksStore } from "../../../stores/tasks";
 
 const Item = (props) => {
   const { updateTask } = useTasksStore();
 
+  useEffect(() => {
+    console.log("props:", props);
+  }, [props]);
+
   return (
     <Label>
-      <span />
       <ChecboxInput
         type="checkbox"
-        checked={props.task.checked}
+        checked={true}
         onChange={(e) => {
-          updateTask(props.task.description);
+          updateTask(props.task.name);
         }}
       />
-      {props.taks.description}
+      <span />
+
+      {props.task.name}
     </Label>
   );
 };
@@ -43,10 +48,5 @@ const Label = styled.label`
   }
 `;
 const ChecboxInput = styled.input`
-  background-color: #fff;
   display: none;
-
-  .checkmark {
-    background-color: green;
-  }
 `;

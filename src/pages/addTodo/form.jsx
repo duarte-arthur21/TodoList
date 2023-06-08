@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { useTasksStore } from "../../stores/tasks";
@@ -28,6 +27,7 @@ const Form = () => {
     };
 
     addTasks([task1, task2, task3]);
+
     navigate("/dashboard");
   };
 
