@@ -13,9 +13,10 @@ const PlusButton = (props) => {
 export { Button, PlusButton };
 
 const MyButton = styled.button`
+  font-family: "Poppins", sans-serif;
   font-size: 17px;
   line-height: 35px;
-  width: 220px;
+  width: 230px;
   justify-content: center;
   text-align: center;
   border-radius: 0%;
@@ -31,8 +32,9 @@ const MyButton = styled.button`
         return `
           background-color: transparent;
           color: rgba(85, 132, 122, 0.97);
-          width: 102px;
-
+          width: 190px;
+          outline: none;
+          margin: 20px
         `;
       default:
         return `
@@ -54,6 +56,7 @@ const Plus = styled(Link)`
   font-size: 28px;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 30px;
 
   &:hover {
     opacity: 0.7;

@@ -62,6 +62,8 @@ const Form = () => {
         required
       />
 
+      <Button variant="info" title="Forgot Password" />
+
       <Button type="submit" title="Sing in" variant="primary" />
     </MyForm>
   );

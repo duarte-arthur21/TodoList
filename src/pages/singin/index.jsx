@@ -19,10 +19,12 @@ export default Singin;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${window.innerWidth}px;
-  height: ${window.innerHeight}px;
-  background-color: #d3d3d3;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(237, 237, 237, 1);
   justify-content: center;
   align-items: center;
-  margin: -120px;
 `;

@@ -7,9 +7,7 @@ const Dashboard = () => {
   return (
     <Wrapper>
       <Head />
-      <div>
-        <List />
-      </div>
+      <List />
     </Wrapper>
   );
 };
@@ -17,13 +15,14 @@ const Dashboard = () => {
 export default Dashboard;
 
 const Wrapper = styled.div`
-  display: flex;
-  position: relative;
+  display: grid;
+  justify-items: center;
   flex-direction: column;
-  width: ${window.innerWidth}px;
-  height: ${window.innerHeight}px;
-  background-color: #d3d3d3;
-  justify-content: center;
-  align-items: center;
-  margin: -120px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: auto;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(237, 237, 237, 1);
 `;

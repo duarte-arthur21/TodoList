@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useTasksStore } from "../../../stores/tasks";
+import WebFont from "webfontloader";
 
 const Item = (props) => {
   const { updateTask } = useTasksStore();
@@ -9,16 +10,32 @@ const Item = (props) => {
     console.log("props:", props);
   }, [props]);
 
+  React.useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Poppins:500"], // Substitua com as fontes desejadas
+      },
+    });
+  }, []);
+
+  const handleCheckboxChange = (event) => {
+    updateTask(event);
+  };
+
   return (
     <Label>
       <ChecboxInput
         type="checkbox"
-        checked={true}
-        onChange={(e) => {
-          updateTask(props.task.name);
+        checked={props.task.completed}
+        onChange={() => {
+          handleCheckboxChange(props.task.name);
         }}
       />
-      <span />
+      <span
+        style={{
+          background: props.task.completed ? "#55847af7" : "transparent",
+        }}
+      />
 
       {props.task.name}
     </Label>
@@ -29,16 +46,12 @@ export { Item };
 
 const Label = styled.label`
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 13px;
   display: flex;
   gap: 15px;
   text-align: center;
   cursor: pointer;
-
-  input [type="checkbox"]:checked + span {
-    background-color: #55847af7;
-  }
 
   span {
     display: inline-block;

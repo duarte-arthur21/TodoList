@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { useState } from "react";
 
 const useTasksStore = create((set) => ({
   tasks: [],
