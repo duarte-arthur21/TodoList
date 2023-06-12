@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  {
+    path: "/login",
+    element: <div>Rota de login</div>,
+  },
 ]);
 
 export { router };
