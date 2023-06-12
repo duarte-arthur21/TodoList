@@ -1,6 +1,5 @@
 import React from "react";
 import { Image } from "../../components/Image";
-import { Text } from "../../components/Text";
 import { useUserStore } from "../../stores/user";
 import styled from "styled-components";
 
@@ -24,4 +23,13 @@ export { Head };
 const Icon = styled.img`
   margin-top: 3rem;
   margin-bottom: 2rem;
+`;
+const Text = styled.p`
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
 `;

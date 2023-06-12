@@ -11,22 +11,25 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const task1 = {
-      name: event.target.task1.value,
-      completed: false,
-    };
+    const data = [
+      {
+        name: event.target.task1.value,
+        completed: false,
+      },
 
-    const task2 = {
-      name: event.target.task2.value,
-      completed: false,
-    };
+      {
+        name: event.target.task2.value,
+        completed: false,
+      },
 
-    const task3 = {
-      name: event.target.task3.value,
-      completed: false,
-    };
+      {
+        name: event.target.task3.value,
+        completed: false,
+      },
+    ];
+    const filteredTasks = data.filter((name) => name !== "");
 
-    addTasks([task1, task2, task3]);
+    addTasks(filteredTasks);
 
     navigate("/dashboard");
   };
