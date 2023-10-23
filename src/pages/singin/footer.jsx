@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import styled from "styled-components";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
-      <Text style={{ fontWeight: "normal" }}>
+      <Text
+        style={{ fontWeight: "normal" }}
+        onClick={() => navigate("/register")}
+      >
         Dont have an account?
         <Button
           style={{ fontWeight: "bold", marginLeft: "-40px" }}

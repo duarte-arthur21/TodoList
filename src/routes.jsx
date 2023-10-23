@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Singin from "./pages/singin";
 import AddTodo from "./pages/addTodo";
 import Dashboard from "./pages/dashboard";
+import { Register } from "./pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,10 @@ const router = createBrowserRouter([
     element: <Singin />,
     errorElement: <div>Rota inexistente</div>,
   },
-
+  {
+    path: "/register",
+    element: <Register />,
+  },
   {
     path: "/addTodo",
     element: <AddTodo />,
